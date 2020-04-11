@@ -8,6 +8,7 @@ const POSTS_QUERY = gql`
           heroImage {
             sourceUrl
           }
+          heroTitle
           shortDescription
         }
         date
