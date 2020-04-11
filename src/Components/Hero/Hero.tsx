@@ -1,5 +1,16 @@
 import { useQuery } from '@apollo/react-hooks';
 import POSTS_QUERY from '../../../queries/posts.query';
+import Slide from '../Slide/Slide';
+
+type Article = {
+  heroImage: string
+  title: string
+  shortDescription: string
+  date: string
+  content: string
+  category: string
+}
+// }
 
 const Hero = () => {
   const { data, loading, error } = useQuery(POSTS_QUERY);
@@ -11,13 +22,22 @@ const Hero = () => {
   // if (error) {
   //   return <p>Error: {JSON.stringify(error)}</p>;
 	// }
-	
+  console.log(data);
   return (
     <header className="hero">
       <div className="slider slider-horizontal">
         <div className="slider__caption swiper-container">
           <div className="swiper-wrapper">
 
+            {
+              data.map(post => <Slide data={{ 
+                id: data.postId,
+                title: data.title,
+                shortDescription: data.general.shortDescription,
+                date: data.date,
+                category: data.categories.edges[0],
+              }}/>)
+            }
             <div className="swiper-slide">
               <div className="slider__item">
                 <h6 className="title title--overhead"><span className="down-up"><span>Web-Site / Mobile App</span></span></h6>

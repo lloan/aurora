@@ -15,10 +15,14 @@ const POSTS_QUERY = gql`
           edges {
             node {
               name
+              description
+              categoryId
             }
           }
         }
         content
+        title
+        postId
       }
     }
   }
