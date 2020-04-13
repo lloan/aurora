@@ -17,12 +17,13 @@ type Article = {
 }
 
 function Article(props) {
+  const { postId } = props; 
   const { data, loading, error } = useQuery(POST_QUERY, {
     variables: {
-      postId: 25
+      postId 
     }
   });
- 
+
   const article = data ? {
     date: data.postBy.date,
     category: data.postBy.categories.edges[0].node.name,
@@ -34,7 +35,7 @@ function Article(props) {
       postId: data.postBy.general.nextArticle.postId,
     }
   } as Article : false;
- 
+
   return (
     article && <>
       <div className="container">
@@ -59,10 +60,10 @@ function Article(props) {
           } />
 
           <footer className="col-12 col-lg-9">
-            <div className="share-post js-block">
-              <a href="#"><i className="icon-facebook"></i><span>Facebook</span></a>
-              <a href="#"><i className="icon-twitter"></i><span>Tweet</span></a>
-              <a href="#"><i className="icon-linkedin"></i><span>Linkedin</span></a>
+            <div className="share-post js-block"> 
+              <a href="https://github.com/lloan"><i className="fab fa-github"></i><span>GitHub</span></a>
+              <a href="https://linkedin.com/in/lloan"><i className="fab fa-linkedin-in"></i><span>Linkedin</span></a>
+              <a href="https://stackoverflow.com/users/2424622/lloan"><i className="fab fa-stack-overflow"></i><span>StackOverflow</span></a>
             </div>
           </footer>
 
@@ -77,17 +78,13 @@ function Article(props) {
             </div>
             <div className="col-12 col-lg-6 js-block">
               <h6 className="title title--h5 triger-hl">
-                <Link href={`article?id=${article.nextArticle.postId}`} >
-                  <a className="decoration--none">
+              <a className="decoration--none" href={`article?id=${article.nextArticle.postId}`}>
                     <span className="hover-line">{article.nextArticle.title}</span>
                   </a>
-                </Link>
               </h6>
-              <Link href={`article?id=${article.nextArticle.postId}`} >
-                <a className="btn-link">
+              <a className="btn-link" href={`article?id=${article.nextArticle.postId}`}>
                   <i className="circle icon-right-open"></i>
                 </a>
-              </Link>
             </div>
           </div>
         </div>

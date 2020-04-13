@@ -38,5 +38,6 @@
 .icon-down-open:before { content: '\e805'; }
 .icon-twitter:before { content: '\f099'; }
 .icon-facebook:before { content: '\f09a'; }
+.icon-github:before { content: '\f09b'; }
 .icon-linkedin:before { content: '\f0e1'; }
 .icon-google:before { content: '\f1a0'; }

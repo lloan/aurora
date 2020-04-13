@@ -104,9 +104,9 @@ const Hero = () => {
 
 
         <div className="social social--floating">
-          <a className="social__link" href="#">GitHub</a>
-          <a className="social__link" href="#">LinkedIn</a>
-          <a className="social__link" href="#">StackOverflow</a>
+          <a className="social__link" href="https://github.com/lloan">GitHub</a>
+          <a className="social__link" href="https://linkedin.com/in/lloan">LinkedIn</a>
+          <a className="social__link" href="https://stackoverflow.com/users/2424622/lloan">StackOverflow</a>
         </div>
       </div>
     </header>
