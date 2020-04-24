@@ -1,8 +1,7 @@
 import React from 'react';
 import moment from "moment";
 import { useQuery } from '@apollo/react-hooks';
-import POST_QUERY from '../../../queries/post.query';
-import Link from 'next/link';
+import POST_QUERY from '../../../queries/post.query'; 
 
 type Article = {
   heroImage: string
@@ -16,7 +15,7 @@ type Article = {
   }
 }
 
-function Article(props) {
+function ArticleContent(props) {
   const { postId } = props; 
   const { data, loading, error } = useQuery(POST_QUERY, {
     variables: {
@@ -93,4 +92,4 @@ function Article(props) {
   )
 }
 
-export default Article;
+export default ArticleContent;

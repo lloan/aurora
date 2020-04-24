@@ -4,9 +4,9 @@ import { useQuery } from '@apollo/react-hooks';
 import POST_TITLE_QUERY from '../queries/post-title.query';
 import Navbar from '../src/Components/Navbar/Navbar'; 
 import Menu from '../src/Components/Menu/Menu';
-import ArticleContent from '../src/Components/ArticleContent/ArticleContent';
+import Article from '../src/Components/ArticleContent/ArticleContent';
 
-const Article = (props) => {
+const Home = (props) => {
   const { id } = props.query;
   const { data, loading, error } = useQuery(POST_TITLE_QUERY, {
     variables: {
@@ -22,14 +22,15 @@ const Article = (props) => {
 			</Head>
 			<Menu />
 			<Navbar />
-      <ArticleContent postId={id} />
+      <Article postId={id} />
 		</div>
 	);
 };
 
-Article.getInitialProps = ({ query }) => {
+
+Home.getInitialProps = ({ query }) => {
   console.log({query});
   return {query}
 }
 
-export default Article;
+export default Home;

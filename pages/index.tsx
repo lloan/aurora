@@ -1,7 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
-
-
+import Head from 'next/head'; 
 import Navbar from '../src/Components/Navbar/Navbar';
 import Hero from '../src/Components/Hero/Hero';
 import Menu from '../src/Components/Menu/Menu';
